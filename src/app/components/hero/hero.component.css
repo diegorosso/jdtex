@@ -1,0 +1,51 @@
+.hero {
+  --section-padding: 100px;
+  padding-block-start: calc(var(--section-padding) + 40px);
+  background-position: left;
+}
+
+.hero::before {
+  inset: 0;
+  background-color: var(--rich-black-fogra-39_50);
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.hero-text {
+  color: var(--white);
+  margin-block: 15px 40px;
+}
+
+
+@media (min-width: 575px) {
+  .hero {
+    padding-block-start: calc(var(--section-padding) + 80px);
+  }
+
+  .hero-text {
+    font-size: var(--fs-18);
+  }
+
+}
+
+@media (min-width: 992px) {
+  .hero {
+    --section-padding: 150px;
+    padding-block-start: calc(var(--section-padding) + 100px);
+  }
+
+
+
+}
+
+@media (min-width: 1200px) {
+
+  .hero {
+    background-position: left;
+    padding-block-end: 200px;
+  }
+
+
+
+
+}
