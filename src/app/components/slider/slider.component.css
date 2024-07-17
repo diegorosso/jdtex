@@ -1,0 +1,46 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center; /* Alineación de texto centrado */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  justify-content: center; /* Centra los logos horizontalmente */
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+img {
+  max-width: 20%; /* Ajusta el tamaño máximo del logo */
+  height: auto; /* Mantiene la proporción */
+  display: inline-block; /* Permite centrado vertical si necesario */
+}

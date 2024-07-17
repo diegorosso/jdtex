@@ -6,7 +6,9 @@ import { ServiceComponent } from './components/service/service.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { FormComponent } from './components/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SponsorComponent } from './components/sponsor/sponsor.component';
+import { SliderComponent } from './components/slider/slider.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,8 @@ import { SponsorComponent } from './components/sponsor/sponsor.component';
     GaleriaComponent,
     FormComponent,
     FooterComponent,
-    SponsorComponent
+
+    SliderComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

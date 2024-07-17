@@ -1,0 +1,10 @@
+<div class="slider-container">
+  <h1>Confían en Nosotros</h1>
+  <div class="slider">
+    <div class="slide" *ngFor="let brand of brands">
+      <img [src]="brand.imgSrc" [alt]="brand.name" />
+    </div>
+  </div>
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
+</div>
