@@ -6,6 +6,7 @@ import { ServiceComponent } from './components/service/service.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { FormComponent } from './components/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SponsorComponent } from './components/sponsor/sponsor.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ServiceComponent,
     GaleriaComponent,
     FormComponent,
-    FooterComponent
+    FooterComponent,
+    SponsorComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
