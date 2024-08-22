@@ -43,8 +43,10 @@
 }
 
 .footer-link-box {
-  display: grid;
-  gap: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .footer-list-title {
@@ -222,6 +224,8 @@ a.contact-link:is(:hover, :focus) {
 
 }
 
-@media (min-width: 1200px){
-  .footer-link-box { grid-template-columns: 0.5fr 0.5fr 1fr 0.8fr; }
+@media (min-width: 1200px) {
+  .footer-link-box {
+    grid-template-columns: 0.5fr 0.5fr 1fr 0.8fr;
+  }
 }

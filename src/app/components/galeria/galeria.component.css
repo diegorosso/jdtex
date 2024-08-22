@@ -2,6 +2,23 @@
   margin-block-end: 60px;
 }
 
+.img-holder {
+  width: 100%; /* O el ancho que desees */
+  padding-top: 75%; /* Esto hace que la altura sea el 75% del ancho, puedes ajustarlo según tus necesidades */
+  position: relative;
+  overflow: hidden;
+}
+
+.img-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto hace que la imagen se escale y recorte para llenar el contenedor sin distorsión */
+  transition: var(--transition-2);
+}
+
 .gallery .section-text {
   margin-block: 12px 15px;
 }
