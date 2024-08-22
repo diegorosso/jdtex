@@ -12,6 +12,8 @@
 
 .gallery-card .card-banner .img-cover {
   transition: var(--transition-2);
+  width: 100%; /* Agrega width para que las imágenes se ajusten al contenedor */
+  height: auto; /* Agrega height para mantener la proporción */
 }
 
 .gallery-card:is(:hover, :focus-within) .card-banner .img-cover {
@@ -83,12 +85,10 @@
   .gallery .section-text {
     margin-block-end: 0;
   }
-
 }
 
 @media (min-width: 1200px) {
   .gallery .grid-list {
     grid-template-columns: repeat(4, 1fr);
   }
-
 }

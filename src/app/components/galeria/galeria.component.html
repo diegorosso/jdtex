@@ -14,98 +14,21 @@
     </div>
 
     <ul class="grid-list">
-      <li>
+      <li *ngFor="let image of images">
         <div class="gallery-card">
-          <figure
-            class="card-banner img-holder"
-            style="--width: 422; --height: 550"
-          >
+          <figure class="card-banner img-holder">
             <img
-              src="../../../assets/galery1.jpg"
-              width="422"
-              height="550"
+              [src]="image.src"
+              [alt]="image.alt"
+              [width]="image.width"
+              [height]="image.height"
               loading="lazy"
-              alt="Hair Cutting"
               class="img-cover"
             />
           </figure>
 
           <div class="card-content">
-<!--             <h3 class="h3 card-title">Lorem, ipsum.</h3>
-
-            <p class="card-text">Lorem, ipsum dolor.</p> -->
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="gallery-card">
-          <figure
-            class="card-banner img-holder"
-            style="--width: 422; --height: 550"
-          >
-            <img
-              src="../../../assets/galery2.jpg"
-              width="422"
-              height="550"
-              loading="lazy"
-              alt="Hair Cutting"
-              class="img-cover"
-            />
-          </figure>
-
-          <div class="card-content">
-<!--             <h3 class="h3 card-title">Lorem, ipsum.</h3>
-
-            <p class="card-text">Lorem, ipsum dolor.</p> -->
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="gallery-card">
-          <figure
-            class="card-banner img-holder"
-            style="--width: 422; --height: 550"
-          >
-            <img
-              src="../../../assets/galery4.jpg"
-              width="422"
-              height="550"
-              loading="lazy"
-              alt="Hair Cutting"
-              class="img-cover"
-            />
-          </figure>
-
-          <div class="card-content">
-<!--             <h3 class="h3 card-title">Lorem, ipsum.</h3>
-
-            <p class="card-text">Lorem, ipsum dolor.</p> -->
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="gallery-card">
-          <figure
-            class="card-banner img-holder"
-            style="--width: 422; --height: 550"
-          >
-            <img
-              src="../../../assets/galery5.jpg"
-              width="422"
-              height="550"
-              loading="lazy"
-              alt="Hair Cutting"
-              class="img-cover"
-            />
-          </figure>
-
-          <div class="card-content">
-<!--             <h3 class="h3 card-title">Lorem, ipsum.</h3>
-
-            <p class="card-text">Lorem, ipsum dolor.</p> -->
+            <!-- Contenido opcional -->
           </div>
         </div>
       </li>
