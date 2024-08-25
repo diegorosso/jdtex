@@ -3,7 +3,6 @@
     <div class="title-wrapper">
       <div>
         <h2 class="h2 section-title">Nuestra fábrica</h2>
-
         <p class="section-text">
           Contamos con la mejor tecnología y maquinaria para poder garantizar
           los mejores resultados en cada uno de nuestros procesos de
@@ -13,23 +12,25 @@
       </div>
     </div>
 
-    <ul class="grid-list">
-      <li *ngFor="let image of images">
-        <div class="gallery-card">
-          <figure class="card-banner img-holder">
-            <img
-              [src]="image.src"
-              [alt]="image.alt"
-              loading="lazy"
-              class="img-cover"
-            />
-          </figure>
-
-          <div class="card-content">
-            <!-- Contenido opcional -->
+    <div class="gallery-slider">
+      <ul class="slider-track">
+        <li *ngFor="let image of visibleImages" class="gallery-slide">
+          <div class="gallery-card" tabindex="0" aria-label="Imagen de la fábrica">
+            <figure class="card-banner img-holder">
+              <img
+                [src]="image.src"
+                [alt]="image.alt"
+                loading="lazy"
+                class="img-cover"
+              />
+            </figure>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+      <div class="slider-nav">
+        <button (click)="prevSlide()">&#9664;</button>
+        <button (click)="nextSlide()">&#9654;</button>
+      </div>
+    </div>
   </div>
 </section>

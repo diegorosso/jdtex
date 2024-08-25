@@ -1,12 +1,87 @@
+/* Contenedor principal del slider */
+.gallery-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Lista de imágenes en el slider */
+.slider-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Cada imagen ocupa todo el espacio disponible en su contenedor */
+.gallery-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botones de navegación */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-nav button {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-nav button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Opcional: estilos para los puntos de navegación */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.slider-dots button {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-dots button.active {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Resto del CSS anterior, ajustado para el slider */
+
 .title-wrapper {
   margin-block-end: 60px;
 }
 
 .img-holder {
-  width: 100%; /* O el ancho que desees */
-  padding-top: 75%; /* Esto hace que la altura sea el 75% del ancho, puedes ajustarlo según tus necesidades */
+  width: 100%;
+  padding-top: 75%;
   position: relative;
   overflow: hidden;
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-holder:hover,
+.img-holder:focus-within {
+  transform: scale(1.03); /* Ligeramente más grande al pasar el cursor */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
 }
 
 .img-cover {
@@ -15,8 +90,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Esto hace que la imagen se escale y recorte para llenar el contenedor sin distorsión */
-  transition: var(--transition-2);
+  object-fit: cover;
 }
 
 .gallery .section-text {
@@ -25,60 +99,30 @@
 
 .gallery-card {
   position: relative;
+  border-radius: 8px; /* Asegura que el contenedor también tenga esquinas redondeadas */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover,
+.gallery-card:focus-within {
+  /* transform: scale(1.05); */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .gallery-card .card-banner .img-cover {
-  transition: var(--transition-2);
-  width: 100%; /* Agrega width para que las imágenes se ajusten al contenedor */
-  height: auto; /* Agrega height para mantener la proporción */
+  transition: transform 0.3s ease;
 }
 
 .gallery-card:is(:hover, :focus-within) .card-banner .img-cover {
   transform: scale(1.1);
 }
 
-.gallery-card .card-content {
-  position: absolute;
-  inset: 15px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: var(--transition-2);
-  cursor: pointer;
-}
-
-.gallery-card:is(:hover, :focus-within) .card-content {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.gallery-card :is(.card-title, .card-text) {
-  color: var(--white);
-}
-
-.gallery-card .card-btn {
-  background-color: var(--white);
-  color: var(--indian-yellow);
-  font-size: 18px;
-  padding: 16px;
-  border-radius: var(--radius-5);
-  margin-block-start: 12px;
-  transition: var(--transition-1);
-}
-
-.gallery-card .card-btn:is(:hover, :focus) {
-  background-color: var(--indian-yellow);
-  color: var(--white);
-}
-
 @media (min-width: 575px) {
   .gallery .grid-list {
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Espacio entre las imágenes */
   }
 }
 
@@ -107,5 +151,6 @@
 @media (min-width: 1200px) {
   .gallery .grid-list {
     grid-template-columns: repeat(4, 1fr);
+    gap: 24px; /* Ajuste de espacio para pantallas más grandes */
   }
 }

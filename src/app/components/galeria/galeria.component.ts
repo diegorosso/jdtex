@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+interface Image {
+  src: string;
+  alt: string;
+}
+
 @Component({
   selector: 'app-galeria',
   standalone: true,
@@ -13,8 +18,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export class GaleriaComponent {
   arrow = faArrowRight;
 
-  // Array de imágenes con sus propiedades
-  images = [
+  images: Image[] = [
     { src: '../../../assets/1.webp', alt: '' },
     { src: '../../../assets/2.webp', alt: '' },
     { src: '../../../assets/3.webp', alt: '' },
@@ -45,4 +49,25 @@ export class GaleriaComponent {
     { src: '../../../assets/28.webp', alt: '' },
     { src: '../../../assets/29.webp', alt: '' }
   ];
+
+  visibleImages: Image[] = this.images.slice(0, 5);
+  currentIndex = 0;
+
+  updateVisibleImages(): void {
+    this.visibleImages = this.images.slice(this.currentIndex, this.currentIndex + 5);
+  }
+
+  prevSlide(): void {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.updateVisibleImages();
+    }
+  }
+
+  nextSlide(): void {
+    if (this.currentIndex < this.images.length - 5) {
+      this.currentIndex++;
+      this.updateVisibleImages();
+    }
+  }
 }
