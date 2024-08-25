@@ -58,7 +58,7 @@
 
 .corte {
   position: relative;
-  background-image: url(../../../assets/corte.jpg);
+  background-image: url(../../../assets/corte.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
@@ -93,7 +93,7 @@
 
 .estampado {
   position: relative;
-  background-image: url(../../../assets/Estampado.jpg);
+  background-image: url(../../../assets/estampado.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
@@ -128,7 +128,7 @@
 
 .bordado {
   position: relative;
-  background-image: url(../../../assets/bordadotextil.jpg);
+  background-image: url(../../../assets/bordado.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
@@ -163,7 +163,7 @@
 
 .confeccion {
   position: relative;
-  background-image: url(../../../assets/confección.jpg);
+  background-image: url(../../../assets/confección.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
@@ -198,7 +198,7 @@
 
 .transfer {
   position: relative;
-  background-image: url(../../../assets/transfer.jpg);
+  background-image: url(../../../assets/transfer.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
@@ -234,7 +234,7 @@
 
 .planchado {
   position: relative;
-  background-image: url(../../../assets/plancha.jpg);
+  background-image: url(../../../assets/plancha.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
@@ -269,7 +269,7 @@
 
 .empaquetado {
   position: relative;
-  background-image: url(../../../assets/empaquetado.jpeg);
+  background-image: url(../../../assets/empaquetado.webp);
   background-size: cover;
   background-position: center;
   height: 300px; /* Ajusta según tus necesidades */
