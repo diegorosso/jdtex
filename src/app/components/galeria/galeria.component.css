@@ -8,7 +8,7 @@
 /* Lista de imágenes en el slider */
 .slider-track {
   display: flex;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; /* Transición suave para el desplazamiento del slider */
 }
 
 /* Cada imagen ocupa todo el espacio disponible en su contenedor */
@@ -75,13 +75,10 @@
   overflow: hidden;
   border-radius: 8px; /* Esquinas redondeadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.img-holder:hover,
-.img-holder:focus-within {
-  transform: scale(1.03); /* Ligeramente más grande al pasar el cursor */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+  /* Comentado para eliminar el zoom en hover */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  /* transform: scale(1.03); */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); */
 }
 
 .img-cover {
@@ -93,29 +90,24 @@
   object-fit: cover;
 }
 
-.gallery .section-text {
-  margin-block: 12px 15px;
-}
-
+/* Comentado para eliminar el zoom en hover */
 .gallery-card {
   position: relative;
   border-radius: 8px; /* Asegura que el contenedor también tenga esquinas redondeadas */
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-card:hover,
-.gallery-card:focus-within {
+  /* Comentado para eliminar el zoom en hover */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
   /* transform: scale(1.05); */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  /* box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); */
 }
 
 .gallery-card .card-banner .img-cover {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Mantener la transición suave en el zoom */
 }
 
 .gallery-card:is(:hover, :focus-within) .card-banner .img-cover {
-  transform: scale(1.1);
+  /* Comentado para eliminar el zoom en hover */
+  /* transform: scale(1.1); */
 }
 
 @media (min-width: 575px) {
