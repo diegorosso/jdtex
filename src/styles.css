@@ -257,7 +257,8 @@ body {
   transition: var(--transition-2);
 }
 
-.btn:is(:hover, :focus)::before {
+.btn:hover::before,
+.btn:focus::before {
   transform: skewY(-15deg) scaleY(2.5);
 }
 
