@@ -91,6 +91,18 @@ textarea.input-field {
   color: var(--eerie-black-1);
 }
 
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: green;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
 @media (min-width: 575px) {
   .appoin-card .card-content {
     padding-inline: 50px;

@@ -9,50 +9,68 @@
           gracias!
         </p>
 
-        <form action="" class="appoin-form">
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="sendEmail($event)"
+          action=""
+          class="appoin-form"
+        >
           <div class="input-wrapper">
             <input
               type="text"
-              name="name"
+              formControlName="firstName"
               placeholder="Nombre y Apellido"
-              required
               class="input-field"
             />
+            <!-- Mensaje de error -->
+            <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched" class="error">
+              El nombre es requerido.
+            </div>
 
             <input
               type="email"
-              name="email_address"
+              formControlName="email"
               placeholder="Email"
-              required
               class="input-field"
             />
+            <!-- Mensaje de error -->
+            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
+              Introduzca un email válido.
+            </div>
           </div>
 
           <div class="input-wrapper">
             <input
               type="text"
-              name="phone"
+              formControlName="phone"
               placeholder="Teléfono"
-              required
               class="input-field"
             />
+            <!-- Mensaje de error -->
+            <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="error">
+              El teléfono es requerido.
+            </div>
           </div>
 
-          <!-- <input type="date" name="date" required class="input-field date"> -->
-
           <textarea
-            name="message"
+            formControlName="message"
             placeholder="Mensaje"
-            required
             class="input-field"
           ></textarea>
+          <!-- Mensaje de error -->
+          <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error">
+            El mensaje es requerido.
+          </div>
 
-          <button type="submit" class="form-btn">
+          <button type="submit" class="form-btn" [disabled]="contactForm.invalid">
             <span class="span">Enviar</span>
-
-            <!--  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon> -->
           </button>
         </form>
+
+        <!-- Mensaje de éxito al enviar -->
+        <div *ngIf="emailSent" class="success-message">
+          ¡Tu mensaje ha sido enviado con éxito!
+        </div>
       </div>
     </div>
   </div>
