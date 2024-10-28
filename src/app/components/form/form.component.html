@@ -9,69 +9,66 @@
           gracias!
         </p>
 
-        <form
-          [formGroup]="contactForm"
-          (ngSubmit)="sendEmail($event)"
-          action=""
-          class="appoin-form"
-        >
+        <form [formGroup]="contactForm" (ngSubmit)="sendEmail($event)" class="appoin-form">
           <div class="input-wrapper">
             <input
               type="text"
               formControlName="firstName"
-              placeholder="Nombre y Apellido"
+              [placeholder]="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched ? 'Nombre y Apellido es obligatorio' : 'Nombre y Apellido'"
+              [ngClass]="{'error-placeholder': contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched}"
               class="input-field"
+              required
             />
-            <!-- Mensaje de error -->
-            <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched" class="error">
-              El nombre es requerido.
-            </div>
+          </div>
 
+          <div class="input-wrapper">
             <input
               type="email"
               formControlName="email"
-              placeholder="Email"
+              [placeholder]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched ? 'Email es obligatorio y debe tener un formato válido' : 'Email'"
+              [ngClass]="{'error-placeholder': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
               class="input-field"
+              required
             />
-            <!-- Mensaje de error -->
-            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
-              Introduzca un email válido.
-            </div>
           </div>
 
           <div class="input-wrapper">
             <input
               type="text"
               formControlName="phone"
-              placeholder="Teléfono"
+              [placeholder]="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched ? 'Teléfono es obligatorio y solo debe contener números' : 'Teléfono'"
+              [ngClass]="{'error-placeholder': contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched}"
               class="input-field"
+              inputmode="numeric"
+              (keypress)="onlyNumbers($event)"
+              required
             />
-            <!-- Mensaje de error -->
-            <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="error">
-              El teléfono es requerido.
-            </div>
           </div>
 
           <textarea
             formControlName="message"
-            placeholder="Mensaje"
+            [placeholder]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched ? 'Mensaje es obligatorio' : 'Mensaje'"
+            [ngClass]="{'error-placeholder': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
             class="input-field"
+            required
           ></textarea>
-          <!-- Mensaje de error -->
-          <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error">
-            El mensaje es requerido.
-          </div>
 
-          <button type="submit" class="form-btn" [disabled]="contactForm.invalid">
+          <button type="submit" class="form-btn" [disabled]="!contactForm.valid">
             <span class="span">Enviar</span>
           </button>
         </form>
-
-        <!-- Mensaje de éxito al enviar -->
-        <div *ngIf="emailSent" class="success-message">
-          ¡Tu mensaje ha sido enviado con éxito!
-        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Modal -->
+<div *ngIf="isEmailSent !== null" class="modal">
+  <div class="modal-content">
+    <h2>{{ isEmailSent ? 'Correo enviado' : 'Error en el envío' }}</h2>
+    <p>
+      {{ isEmailSent ? 'Tu mensaje ha sido enviado exitosamente.' : 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.' }}
+    </p>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
   </div>
 </section>
